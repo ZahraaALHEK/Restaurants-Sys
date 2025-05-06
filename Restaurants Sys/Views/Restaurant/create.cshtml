@@ -1,0 +1,29 @@
+@model Restaurant
+
+ <form method="post">
+    <div class=" p-3 mt-4">
+        <div class="row pb-2">
+            <h3 class="text-primary text-center">Add your Restaurnat</h3>
+            <hr> 
+        </div>
+        <div class="mb-3">
+            <label asp-for="Name"></label><br>
+            <input asp-for="Name" type="text"  class="from-control"><br>
+            <label asp-for="Phone"></label><br>
+            <input asp-for="Phone" type="text" class="from-control"><br>
+            <label asp-for="Address"></label><br>
+            <input asp-for="Address" type="text" class="from-control"><br>
+            <label asp-for="LogoImageUrl"></label><br>
+            <input asp-for="LogoImageUrl" type="file" class="from-control"><br>
+            <label asp-for="BannerImageUrl"></label><br>
+            <input asp-for="BannerImageUrl" type="file" class="from-control"><br>
+             <label asp-for="WhatsAppNumber"></label><br>
+            <input asp-for="WhatsAppNumber" type="text" class="from-control"><br>
+        </div>
+        <div>
+            <button type="submit" class="btn btn-primary" style="width:150px;">Add</button>
+            <a asp-controller="Restaurant" asp-action="Index" class="btn btn-secondary" style="width: 150px;">Back to Restaurants</a>
+        </div>
+    </div>
+
+ </form>
