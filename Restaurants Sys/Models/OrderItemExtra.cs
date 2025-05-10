@@ -1,5 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
 
 namespace Restaurants_Sys.Models;
 // OrderItemExtra.cs (junction table for OrderItem and Extra many-to-many)
@@ -13,6 +14,9 @@ public class OrderItemExtra
     [ForeignKey("Extra")]
     public int ExtraId { get; set; }
 
-    public virtual OrderItem OrderItem { get; set; }
-    public virtual Extra Extra { get; set; }
+
+    [ValidateNever]
+    public virtual OrderItem? OrderItem { get; set; }
+    [ValidateNever]
+    public virtual Extra? Extra { get; set; }
 }

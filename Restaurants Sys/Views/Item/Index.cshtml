@@ -1,30 +1,34 @@
-@model  IEnumerable<Category>
+@model  IEnumerable<MenuItem>
 @{
    
 }
 
 <div class="text-center">
-    <h1>this Category Page</h1>
+    <h1>this Items Page</h1>
 </div>
 <div class="m-5">
     <table>
         <tr>
             <th>id</th>
             <th>name</th>
+            <th>Price</th>
             <th>Description</th>
-            <th>Image</th>
-            <th>RestaurantId</th>
-            <th>    </th>
+            <th>ImageUrl</th>
+            <th>IsAvailable</th>
+            <th>CategoryId</th>
+            
         </tr>
         @foreach(var obj in Model)
         {
             <tr>
                 <td>@obj.Id</td>
                 <td>@obj.Name</td>
+                <td>@obj.Price</td>
                 <td>@obj.Description</td>
                 <td>@obj.ImageUrl</td>
-                <td>@obj.RestaurantId</td>
-                <td> <a asp-controller="Item" asp-action="Index"  asp-route-categoryId="@obj.Id" class="btn btn-primary">go to Items</a> </td>
+                <td>@obj.IsAvailable</td>
+                <td>@obj.CategoryId</td>
+               
             </tr>
         }
 

@@ -1,5 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
 
 namespace Restaurants_Sys.Models;
 [Table("Extras")]
@@ -13,7 +14,8 @@ public class Extra
     [Required]
     public decimal ? Price { get; set; }
 
-
-    public virtual ICollection<MenuItemExtra> MenuItemExtras { get; set; }
-    public virtual ICollection<OrderItemExtra> OrderItemExtras { get; set; }
+    [ValidateNever]
+    public virtual ICollection<MenuItemExtra>? MenuItemExtras { get; set; }
+    [ValidateNever]
+    public virtual ICollection<OrderItemExtra>? OrderItemExtras { get; set; }
 }    

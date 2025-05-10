@@ -1,29 +1,44 @@
 @model Restaurant
 
- <form method="post">
-    <div class=" p-3 mt-4">
+<form method="post" enctype="multipart/form-data">
+    <div class="p-3 mt-4">
         <div class="row pb-2">
-            <h3 class="text-primary text-center">Add your Restaurnat</h3>
+            <h3 class="text-primary text-center">Add your Restaurant</h3>
             <hr> 
         </div>
+        <div asp-validation-summary="All" class="text-danger"></div>
         <div class="mb-3">
-            <label asp-for="Name"></label><br>
-            <input asp-for="Name" type="text"  class="from-control"><br>
-            <label asp-for="Phone"></label><br>
-            <input asp-for="Phone" type="text" class="from-control"><br>
-            <label asp-for="Address"></label><br>
-            <input asp-for="Address" type="text" class="from-control"><br>
-            <label asp-for="LogoImageUrl"></label><br>
-            <input asp-for="LogoImageUrl" type="file" class="from-control"><br>
-            <label asp-for="BannerImageUrl"></label><br>
-            <input asp-for="BannerImageUrl" type="file" class="from-control"><br>
-             <label asp-for="WhatsAppNumber"></label><br>
-            <input asp-for="WhatsAppNumber" type="text" class="from-control"><br>
+            <label asp-for="Name"></label>
+            <input asp-for="Name" class="form-control"/>
+            <span asp-validation-for="Name" class="text-danger"></span>
+            
+            <label asp-for="Phone" class="mt-2"></label>
+            <input asp-for="Phone" class="form-control"/>
+            <span asp-validation-for="Phone" class="text-danger"></span>
+            
+            <label asp-for="Address" class="mt-2"></label>
+            <input asp-for="Address" class="form-control"/>
+            <span asp-validation-for="Address" class="text-danger"></span>
+            
+            <label asp-for="LogoImageFile" class="mt-2"></label>
+            <input asp-for="LogoImageFile" type="file" class="form-control"/>
+            <span asp-validation-for="LogoImageFile" class="text-danger"></span>
+            
+            <label asp-for="BannerImageFile" class="mt-2"></label>
+            <input asp-for="BannerImageFile" type="file" class="form-control"/>
+            <span asp-validation-for="BannerImageFile" class="text-danger"></span>
+            
+            <label asp-for="WhatsAppNumber" class="mt-2"></label>
+            <input asp-for="WhatsAppNumber" class="form-control"/>
+            <span asp-validation-for="WhatsAppNumber" class="text-danger"></span>
         </div>
-        <div>
+        <div class="mt-3">
             <button type="submit" class="btn btn-primary" style="width:150px;">Add</button>
             <a asp-controller="Restaurant" asp-action="Index" class="btn btn-secondary" style="width: 150px;">Back to Restaurants</a>
         </div>
     </div>
+</form>
 
- </form>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

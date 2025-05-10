@@ -1,6 +1,8 @@
 namespace Restaurants_Sys.Models;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
+
 [Table("Orders")]
 public class Order
 {
@@ -33,7 +35,8 @@ public class Order
     [ForeignKey("Restaurant")]
     public int RestaurantId { get; set; }
 
-    
-    public virtual Restaurant Restaurant { get; set; }
-    public virtual ICollection<OrderItem> OrderItems { get; set; }
+    [ValidateNever]
+    public virtual Restaurant ? Restaurant { get; set; }
+    [ValidateNever]
+    public virtual ICollection<OrderItem> ? OrderItems { get; set; }
 }

@@ -1,5 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
 
 namespace Restaurants_Sys.Models;
 [Table("MenuItemExtras")]
@@ -12,9 +13,10 @@ public class MenuItemExtra
     [ForeignKey("Extra")]
     public int ExtraId { get; set; }
 
-    
-    public virtual MenuItem MenuItem { get; set; }
-    public virtual Extra Extra { get; set; }
+    [ValidateNever]
+    public virtual MenuItem ? MenuItem { get; set; }
+    [ValidateNever]
+    public virtual Extra? Extra { get; set; }
 }
 
 
