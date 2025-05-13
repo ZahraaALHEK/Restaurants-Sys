@@ -1,12 +1,13 @@
 @model  IEnumerable<Category>
 @{
-   
+    // Get RestaurantId from ViewData
+    var restaurantId = (int)ViewData["RestaurantId"];
 }
 
-<div class="text-center">
-    <h1>this Category Page</h1>
-</div>
+<h2>Categories for Restaurant @restaurantId</h2>
 <div class="m-5">
+    
+    <input type="hidden" name="RestaurantId" value="@restaurantId" />
     <table>
         <tr>
             <th>id</th>
@@ -15,11 +16,13 @@
             <th>Image</th>
             <th>RestaurantId</th>
             <th>    </th>
+            <th>    </th>
         </tr>
         @foreach(var obj in Model)
         {
             <tr>
                 <td>@obj.Id</td>
+                
                 <td>@obj.Name</td>
                 <td>@obj.Description</td>
                 <td>@obj.ImageUrl</td>
@@ -29,5 +32,5 @@
         }
 
     </table>
-    
+    <a asp-action="create" asp-route-restaurantId="@restaurantId" class="btn btn-primary">Add New Category</a>
 </div>

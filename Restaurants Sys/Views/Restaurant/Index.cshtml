@@ -17,6 +17,8 @@
             <th>BannerImageUrl</th>
             <th>WhatsAppNumber</th>
             <th></th>
+            <th></th>
+            <th></th>
         </tr>
         @foreach(var obj in Model)
         {
@@ -29,6 +31,8 @@
                 <td>@obj.BannerImageUrl</td>
                 <td>@obj.WhatsAppNumber</td>
                 <td> <a asp-controller="Category" asp-action="Index"  asp-route-RestaurantId="@obj.Id" class="btn btn-primary">visit</a> </td>
+                <td> <a asp-controller="Restaurant" asp-action="Update"  asp-route-id="@obj.Id" class="btn  btn-info">Edit</a> </td>
+                <td> <a asp-controller="Restaurant" asp-action="Delete"  asp-route-id="@obj.Id" class="btn btn-warning">Delete</a> </td>
             </tr>
         }
 

@@ -26,7 +26,7 @@ public class Restaurant
     [AllowedExtensions(new[] { ".jpg", ".png", ".jpeg", ".gif" }, ErrorMessage = "Only .jpg, .png, .jpeg, or .gif allowed")]
     public IFormFile ? LogoImageFile { get; set; }
      [Display(Name = "Image URL")]
-    [Url(ErrorMessage = "Invalid URL format")]
+    // [Url(ErrorMessage = "Invalid URL format")]
     [StringLength(500, ErrorMessage = "URL cannot exceed 500 characters")]
 
     public string ? LogoImageUrl { get; set; }
@@ -38,7 +38,7 @@ public class Restaurant
     [AllowedExtensions(new[] { ".jpg", ".png", ".jpeg", ".gif" }, ErrorMessage = "Only .jpg, .png, .jpeg, or .gif allowed")]
     public IFormFile ? BannerImageFile { get; set; }
      [Display(Name = "Image URL")]
-    [Url(ErrorMessage = "Invalid URL format")]
+    // [Url(ErrorMessage = "Invalid URL format")]
     [StringLength(500, ErrorMessage = "URL cannot exceed 500 characters")]    
     public string ? BannerImageUrl { get; set; }
     [Display(Name = "WhatsApp Number")]

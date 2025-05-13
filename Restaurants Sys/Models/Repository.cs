@@ -31,9 +31,14 @@ public class Repository<T> : IRepository<T> where T : class
     {
     return await _dbSet.Where(filter).ToListAsync();
     }
-    public Task DeleteAsync(int id)
+    public async Task DeleteAsync(int id)
     {
-        throw new NotImplementedException();
+        var entityToDelete = await _dbSet.FindAsync(id); 
+    if (entityToDelete != null) 
+    {
+        _dbSet.Remove(entityToDelete); 
+        await _context.SaveChangesAsync(); 
+    }
     }
     public async Task <IEnumerable<T>> GetAllAsync(){
                return await _dbSet.ToListAsync();
@@ -50,7 +55,7 @@ public class Repository<T> : IRepository<T> where T : class
     
     if(options.HasOrderBy)
     {
-        query = query.OrderBy(options.OrderBy); // Note: Added assignment here
+        query = query.OrderBy(options.OrderBy); 
     }
     
     foreach (string include in options.GetIncludes())
@@ -63,8 +68,10 @@ public class Repository<T> : IRepository<T> where T : class
     
     return await query.FirstOrDefaultAsync(e => EF.Property<int>(e, primaryKeyName) == id);
 }    
-public Task UpdateAsync (T entity){
-                throw new NotImplementedException();
+public async Task UpdateAsync (T entity){
+           _context.Update(entity); 
+    await _context.SaveChangesAsync();
+
 
     }
 

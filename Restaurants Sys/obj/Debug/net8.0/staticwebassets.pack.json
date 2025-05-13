@@ -13,6 +13,26 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "C:\\projects\\ASP.net\\Restaurants Sys\\wwwroot\\images\\279432d7-390c-44c3-8b72-a41274c99de0.jpg",
+      "PackagePath": "staticwebassets\\images\\279432d7-390c-44c3-8b72-a41274c99de0.jpg"
+    },
+    {
+      "Id": "C:\\projects\\ASP.net\\Restaurants Sys\\wwwroot\\images\\61edb921-3099-4e52-a31d-dfe2c37fbf0a.jpg",
+      "PackagePath": "staticwebassets\\images\\61edb921-3099-4e52-a31d-dfe2c37fbf0a.jpg"
+    },
+    {
+      "Id": "C:\\projects\\ASP.net\\Restaurants Sys\\wwwroot\\images\\75911f4a-176b-4064-9e18-cdf3e9946d07.jpg",
+      "PackagePath": "staticwebassets\\images\\75911f4a-176b-4064-9e18-cdf3e9946d07.jpg"
+    },
+    {
+      "Id": "C:\\projects\\ASP.net\\Restaurants Sys\\wwwroot\\images\\cf70da79-38f4-45b2-ad84-efa57ec27b62.PNG",
+      "PackagePath": "staticwebassets\\images\\cf70da79-38f4-45b2-ad84-efa57ec27b62.PNG"
+    },
+    {
+      "Id": "C:\\projects\\ASP.net\\Restaurants Sys\\wwwroot\\images\\e689f016-4d13-4cc3-bae3-063e70adad24.jpg",
+      "PackagePath": "staticwebassets\\images\\e689f016-4d13-4cc3-bae3-063e70adad24.jpg"
+    },
+    {
       "Id": "C:\\projects\\ASP.net\\Restaurants Sys\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },
